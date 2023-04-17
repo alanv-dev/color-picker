@@ -56,6 +56,11 @@
     <script defer>
         const colorPickerBtn = document.getElementById("color-picker-btn");
         colorPickerBtn.addEventListener("click", function () {
+            if(!window.EyeDropper){
+                alert("Your browser does not support this feature");
+                return;
+            }
+
             const eyeDropper = new EyeDropper();
             eyeDropper.open()
                 .then(color => {
